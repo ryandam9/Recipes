@@ -8,3 +8,4 @@ Simple home-cooked recipes, published as a GitHub Pages site. Open `index.html` 
 - Kidney Bean Eggs
 - Oats Idli
 - Corn Masala
+- Oats Upma
