@@ -1,0 +1,391 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Tomato Pachadi</title><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --ground: #FFF8EC;
+    --surface: #FFFFFF;
+    --ink: #2E1F17;
+    --ink-soft: #6E5A4C;
+    --line: #F0DFC6;
+    --tomato: #D6402A;
+    --tomato-soft: #FBE1DA;
+    --turmeric: #E9A21A;
+    --turmeric-soft: #FDF0CF;
+    --leaf: #2F7A3E;
+    --leaf-soft: #DDEFDC;
+    --seed: #3B2A20;
+    --on-accent: #FFFFFF;
+    --shadow: 0 10px 30px -12px rgba(120, 50, 20, .25);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ground: #15201A;
+      --surface: #1D2B23;
+      --ink: #F6EEE3;
+      --ink-soft: #B9AE9F;
+      --line: #2E4036;
+      --tomato: #FF6B52;
+      --tomato-soft: #3A2320;
+      --turmeric: #F7BC45;
+      --turmeric-soft: #36301C;
+      --leaf: #7FCB86;
+      --leaf-soft: #213A2A;
+      --seed: #F6EEE3;
+      --on-accent: #1A120D;
+      --shadow: 0 10px 30px -12px rgba(0, 0, 0, .6);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ground: #15201A;
+    --surface: #1D2B23;
+    --ink: #F6EEE3;
+    --ink-soft: #B9AE9F;
+    --line: #2E4036;
+    --tomato: #FF6B52;
+    --tomato-soft: #3A2320;
+    --turmeric: #F7BC45;
+    --turmeric-soft: #36301C;
+    --leaf: #7FCB86;
+    --leaf-soft: #213A2A;
+    --seed: #F6EEE3;
+    --on-accent: #1A120D;
+    --shadow: 0 10px 30px -12px rgba(0, 0, 0, .6);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font: 400 16px/1.6 "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding-inline: 16px;
+    padding-block: 0 56px;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    margin-top: 16px;
+    border-radius: 28px;
+    padding: clamp(28px, 6vw, 56px) clamp(22px, 5vw, 56px);
+    background:
+      radial-gradient(circle at 88% 20%, var(--turmeric) 0 70px, transparent 71px),
+      radial-gradient(circle at 96% 78%, var(--leaf) 0 46px, transparent 47px),
+      radial-gradient(circle at 78% 92%, var(--turmeric-soft) 0 30px, transparent 31px),
+      var(--tomato);
+    color: #FFF6EE;
+  }
+  .eyebrow {
+    display: inline-flex; gap: 8px; align-items: center;
+    font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    background: rgba(255,255,255,.18);
+    padding: 6px 12px; border-radius: 999px;
+  }
+  h1 {
+    font-family: "Rozha One", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(48px, 10vw, 92px);
+    line-height: .95;
+    margin: 18px 0 14px;
+    text-wrap: balance;
+    max-width: 12ch;
+  }
+  .lede { max-width: 48ch; font-size: 18px; margin: 0; color: #FFE9DF; }
+  .seeds { display: flex; gap: 7px; margin-top: 26px; flex-wrap: wrap; }
+  .seeds span { width: 9px; height: 9px; border-radius: 50%; background: #3B1E14; opacity: .55; }
+  .seeds span:nth-child(3n) { background: #FFD27A; opacity: .9; }
+
+  /* Facts strip */
+  .facts {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    margin: 18px 0 28px;
+  }
+  .fact {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 18px; padding: 14px 16px;
+  }
+  .fact b {
+    display: block; font-size: 22px; font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .fact small { color: var(--ink-soft); font-size: 13px; letter-spacing: .04em; }
+  .fact:nth-child(1) b { color: var(--tomato); }
+  .fact:nth-child(2) b { color: var(--turmeric); }
+  .fact:nth-child(3) b { color: var(--leaf); }
+  .fact:nth-child(4) b { color: var(--tomato); }
+
+  /* Main grid */
+  .main { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px; align-items: start; }
+
+  h2 {
+    font-family: "Rozha One", Georgia, serif; font-weight: 400;
+    font-size: 32px; line-height: 1.1; margin: 0 0 6px;
+  }
+  .sub { color: var(--ink-soft); margin: 0 0 18px; font-size: 14px; }
+
+  .panel {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; box-shadow: var(--shadow);
+  }
+  .ingredients { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); }
+
+  .servings {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    background: var(--turmeric-soft); border-radius: 16px; padding: 10px 12px 10px 16px;
+    margin-bottom: 20px;
+  }
+  .servings span { font-weight: 600; }
+  .stepper { display: flex; align-items: center; gap: 10px; }
+  .stepper button {
+    width: 36px; height: 36px; border-radius: 50%; border: 0; cursor: pointer;
+    background: var(--turmeric); color: var(--on-accent); font: 700 20px/1 "Figtree", sans-serif;
+  }
+  .stepper button:disabled { opacity: .4; cursor: default; }
+  .stepper output { min-width: 2ch; text-align: center; font-weight: 700; font-size: 20px; font-variant-numeric: tabular-nums; }
+
+  .group { margin-bottom: 18px; }
+  .group:last-child { margin-bottom: 0; }
+  .group h3 {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;
+    margin: 0 0 6px; color: var(--ink-soft);
+  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .g-tomato .dot { background: var(--tomato); }
+  .g-herb .dot { background: var(--leaf); }
+  .g-yogurt .dot { background: var(--line); border: 2px solid var(--ink-soft); }
+  .g-temper .dot { background: var(--turmeric); }
+
+  ul.items { list-style: none; margin: 0; padding: 0; }
+  ul.items li { border-bottom: 1px dashed var(--line); }
+  ul.items li:last-child { border-bottom: 0; }
+  ul.items label {
+    display: grid; grid-template-columns: 22px 5.2em 1fr; gap: 10px; align-items: baseline;
+    padding: 8px 0; cursor: pointer;
+  }
+  ul.items input { accent-color: var(--leaf); width: 18px; height: 18px; transform: translateY(3px); }
+  .qty { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--tomato); }
+  ul.items input:checked ~ span { text-decoration: line-through; opacity: .5; }
+
+  /* Steps */
+  ol.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: s; }
+  ol.steps li {
+    display: grid; grid-template-columns: 48px 1fr; gap: 16px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+    padding: 18px 20px;
+  }
+  .num {
+    width: 48px; height: 48px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: "Rozha One", Georgia, serif; font-size: 22px;
+    color: var(--on-accent);
+  }
+  ol.steps li:nth-child(1) .num { background: var(--tomato); }
+  ol.steps li:nth-child(2) .num { background: var(--turmeric); }
+  ol.steps li:nth-child(3) .num { background: #C9772A; }
+  ol.steps li:nth-child(4) .num { background: var(--ink-soft); }
+  ol.steps li:nth-child(5) .num { background: var(--leaf); }
+  ol.steps h4 { margin: 4px 0 4px; font-size: 18px; font-weight: 700; }
+  ol.steps p { margin: 0; color: var(--ink-soft); }
+  ol.steps p strong { color: var(--ink); font-weight: 600; }
+  .time {
+    display: inline-block; margin-top: 10px;
+    font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
+    background: var(--leaf-soft); color: var(--leaf);
+  }
+
+  .warn {
+    margin-top: 18px; border-radius: 20px; padding: 18px 20px;
+    background: var(--tomato-soft); border: 1px solid var(--tomato);
+  }
+  .warn b { color: var(--tomato); }
+
+  .extras { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+  .extra { border-radius: 20px; padding: 20px; }
+  .extra h3 { margin: 0 0 6px; font-size: 16px; }
+  .extra p { margin: 0; }
+  .extra.serve { background: var(--leaf-soft); }
+  .extra.serve h3 { color: var(--leaf); }
+  .extra.short { background: var(--turmeric-soft); }
+  .extra.short h3 { color: #B27400; }
+  :root[data-theme="dark"] .extra.short h3 { color: var(--turmeric); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .extra.short h3 { color: var(--turmeric); } }
+
+  button:focus-visible, input:focus-visible { outline: 3px solid var(--leaf); outline-offset: 2px; }
+
+  @media (max-width: 820px) {
+    .main { grid-template-columns: 1fr; }
+    .ingredients { position: static; }
+    .facts { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .extras { grid-template-columns: 1fr; }
+    ol.steps li { grid-template-columns: 40px 1fr; gap: 12px; padding: 16px; }
+    .num { width: 40px; height: 40px; font-size: 19px; }
+    .hero { background:
+      radial-gradient(circle at 92% 12%, var(--turmeric) 0 44px, transparent 45px),
+      var(--tomato); }
+  }
+  .back { display:inline-block; margin-top:16px; color: var(--tomato); font-weight:600; text-decoration:none; }
+  .back:hover, .back:focus-visible { text-decoration: underline; }
+</style>
+
+<div class="wrap">
+  <a class="back" href="index.html">← All recipes</a>
+  <header class="hero">
+    <span class="eyebrow">Andhra-style · Tomato chutney</span>
+    <h1>Tomato Pachadi</h1>
+    <p class="lede">Tomatoes cooked down with green chillies, ground with fresh coriander and finished with a crackle of mustard seeds and curry leaves. Tangy, spicy and ready in about 20 minutes.</p>
+    <div class="seeds" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <section class="facts" aria-label="Recipe at a glance">
+    <div class="fact"><b>20 min</b><small>Total time</small></div>
+    <div class="fact"><b>Easy</b><small>Skill level</small></div>
+    <div class="fact"><b>Medium</b><small>Heat, from green chillies</small></div>
+    <div class="fact"><b id="factServes">4</b><small>Servings</small></div>
+  </section>
+
+  <div class="main">
+    <aside class="panel ingredients">
+      <h2>Ingredients</h2>
+      <p class="sub">Tick things off as you gather them.</p>
+
+      <div class="servings">
+        <span>Servings</span>
+        <div class="stepper">
+          <button type="button" id="minus" aria-label="Fewer servings">−</button>
+          <output id="servings" aria-live="polite">4</output>
+          <button type="button" id="plus" aria-label="More servings">+</button>
+        </div>
+      </div>
+
+      <div id="groups"></div>
+    </aside>
+
+    <section>
+      <h2>Method</h2>
+      <p class="sub">Four steps, one pan, a blender and a small tempering pan.</p>
+      <ol class="steps">
+        <li>
+          <div class="num">1</div>
+          <div>
+            <h4>Fry the chillies and cumin</h4>
+            <p>Heat the <strong>1 tsp oil</strong> in a pan. Add the <strong>cumin seeds and green chillies</strong> and fry until the cumin darkens slightly and smells toasty.</p>
+            <span class="time">About 30 seconds</span>
+          </div>
+        </li>
+        <li>
+          <div class="num">2</div>
+          <div>
+            <h4>Cook the tomatoes down</h4>
+            <p>Add the <strong>tomatoes, turmeric and salt</strong>. Cover and cook on medium, stirring now and then, until the tomatoes collapse and most of their liquid has cooked off. Turn off the heat and stir in the <strong>coriander</strong>.</p>
+            <span class="time">About 8–10 minutes</span>
+          </div>
+        </li>
+        <li>
+          <div class="num">3</div>
+          <div>
+            <h4>Grind coarsely</h4>
+            <p>Let the mixture cool, then pulse it in a blender to a coarse, spoonable chutney. <strong>Don't add water</strong>: the tomatoes bring all the moisture it needs.</p>
+            <span class="time">Cool 5 minutes first</span>
+          </div>
+        </li>
+        <li>
+          <div class="num">4</div>
+          <div>
+            <h4>Temper and pour</h4>
+            <p>Heat the <strong>1 tbsp oil</strong> in a small pan. Add the mustard seeds; when they splutter, add the <strong>dried red chillies and curry leaves</strong>. Pour it all over the pachadi and mix.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="warn">
+        <b>Cool before you blend.</b> Hot tomatoes in a sealed blender jar build up steam and can push the lid off. Five minutes on the bench is enough.
+      </div>
+    </section>
+  </div>
+
+  <section class="extras">
+    <div class="extra serve">
+      <h3>How to serve it</h3>
+      <p>Mix it into hot rice with a little ghee, or serve it with dosa, idli or chapati. Taste and adjust the salt before serving.</p>
+    </div>
+    <div class="extra short">
+      <h3>Quick version, no blender</h3>
+      <p>Skip step 3. Mash the cooked tomatoes with the back of a spoon, stir in finely chopped coriander, then temper as usual.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+  const BASE = 4;
+  const groups = [
+    { name: "Tomato base", cls: "g-tomato", items: [
+      [1, "tsp", "oil"],
+      [1, "tsp", "cumin seeds"],
+      [3, "", "green chillies, halved"],
+      [4, "", "ripe tomatoes, chopped"],
+      [0.25, "tsp", "turmeric powder"],
+      [0.75, "tsp", "salt"],
+    ]},
+    { name: "Fresh herbs", cls: "g-herb", items: [
+      [0.5, "cup", "fresh coriander leaves and tender stems"],
+    ]},
+    { name: "Tempering", cls: "g-temper", items: [
+      [1, "tbsp", "oil (sunflower, peanut or ghee)"],
+      [0.5, "tsp", "mustard seeds"],
+      [2, "", "dried red chillies"],
+      [1, "", "sprig curry leaves"],
+    ]},
+  ];
+
+  const FRACS = [[0, ""], [0.125, "⅛"], [0.25, "¼"], [0.333, "⅓"], [0.5, "½"], [0.667, "⅔"], [0.75, "¾"], [1, ""]];
+  function fmt(n) {
+    let whole = Math.floor(n), rest = n - whole, best = FRACS[0];
+    for (const f of FRACS) if (Math.abs(rest - f[0]) < Math.abs(rest - best[0])) best = f;
+    if (best[0] === 1) { whole += 1; best = FRACS[0]; }
+    if (!whole && !best[1]) return "a pinch";
+    return (whole ? whole : "") + best[1];
+  }
+
+  let serves = BASE;
+  const checked = new Set();
+  const box = document.getElementById("groups");
+
+  function render() {
+    const k = serves / BASE;
+    box.innerHTML = groups.map((g, gi) => `
+      <div class="group ${g.cls}">
+        <h3><span class="dot"></span>${g.name}</h3>
+        <ul class="items">
+          ${g.items.map(([amt, unit, name], ii) => {
+            const id = `ing-${gi}-${ii}`;
+            let q = fmt(amt * k);
+            if (unit && q !== "a pinch") q += " " + unit;
+            return `<li><label for="${id}"><input type="checkbox" id="${id}" ${checked.has(id) ? "checked" : ""}><span class="qty">${q}</span><span>${name}</span></label></li>`;
+          }).join("")}
+        </ul>
+      </div>`).join("");
+    document.getElementById("servings").textContent = serves;
+    document.getElementById("factServes").textContent = serves;
+    document.getElementById("minus").disabled = serves <= 1;
+    document.getElementById("plus").disabled = serves >= 12;
+  }
+
+  box.addEventListener("change", e => {
+    if (e.target.type === "checkbox") e.target.checked ? checked.add(e.target.id) : checked.delete(e.target.id);
+  });
+  document.getElementById("minus").addEventListener("click", () => { if (serves > 1) { serves--; render(); } });
+  document.getElementById("plus").addEventListener("click", () => { if (serves < 12) { serves++; render(); } });
+  render();
+</script>
+
+</body></html>

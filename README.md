@@ -9,3 +9,4 @@ Simple home-cooked recipes, published as a GitHub Pages site. Open `index.html` 
 - Oats Idli
 - Corn Masala
 - Oats Upma
+- Tomato Pachadi
