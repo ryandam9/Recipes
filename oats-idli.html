@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oats Idli</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&display=swap">
+<style>
+/* Single centred recipe card, as in the user's reference: serif title, gold dividers, dotted-leader ingredients, roman-numeral steps */
+:root{
+  --bg:#fbf6ec; --card:#fdf9f1; --ink:#2a2622; --muted:#5e554b;
+  --gold:#b8963f; --green:#3f7a52; --red:#b23a2c; --tint:#f5e8e1; --rule:#d8c9a5;
+  --display:"Cormorant Garamond",Garamond,"Times New Roman",serif;
+  --body:"EB Garamond",Garamond,Georgia,serif;
+  --script:"Great Vibes","Brush Script MT",cursive;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1c1915; --card:#221f1a; --ink:#efe6d6; --muted:#b7aa96;
+  --gold:#d4b261; --green:#7fbf90; --red:#e8776a; --tint:#33251f; --rule:#4a4234; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1c1915; --card:#221f1a; --ink:#efe6d6; --muted:#b7aa96;
+  --gold:#d4b261; --green:#7fbf90; --red:#e8776a; --tint:#33251f; --rule:#4a4234; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.card{max-width:640px;margin:0 auto;background:var(--card);border-left:1px solid var(--gold);border-right:1px solid var(--gold);
+  padding-block:32px;padding-inline:clamp(16px,6vw,48px)}
+header{text-align:center}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(2.4rem,9vw,3.6rem);line-height:1.05;margin:0;text-wrap:balance}
+.sub{font-family:var(--display);font-style:italic;font-size:1.25rem;color:var(--muted);margin:14px 0 18px}
+.serves{font-family:var(--display);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-size:.85rem}
+.div{display:flex;align-items:center;justify-content:center;gap:8px;margin:28px 0}
+.div::before,.div::after{content:"";width:90px;height:1px;background:var(--gold)}
+.div span{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:-14px 0 0 -1px var(--gold),14px 0 0 -1px var(--gold)}
+h2{font-family:var(--display);font-weight:500;text-align:center;letter-spacing:.35em;text-transform:uppercase;color:var(--green);font-size:1.05rem;margin:0 0 20px}
+ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.row{display:flex;align-items:baseline;gap:10px}
+.row .name{min-width:0}
+.row .lead{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-4px);min-width:20px}
+.row .amt{color:var(--red);font-family:var(--display);font-size:1.1rem;white-space:nowrap}
+.note{display:block;font-style:italic;color:var(--muted);font-size:.95rem;line-height:1.4}
+.secret{text-align:center;font-family:var(--display);font-style:italic;font-size:1.2rem;margin:26px 0 0;text-wrap:balance}
+.secret b{font-family:var(--script);font-weight:400;color:var(--gold);font-size:1.7rem;font-style:normal;margin-right:6px}
+ol{list-style:none;padding:0;margin:0;display:grid;gap:22px}
+ol li{display:grid;grid-template-columns:2.6rem 1fr;gap:8px}
+.num{font-family:var(--display);color:var(--gold);font-size:1.3rem;text-align:right;line-height:1.4}
+h3{font-family:var(--display);font-weight:600;font-size:1.35rem;margin:0 0 4px;line-height:1.3}
+ol p{margin:0}
+.callout{background:var(--tint);border-left:3px solid var(--red);padding:12px 16px;margin-top:8px}
+.callout em{display:block;color:var(--red);font-family:var(--display);font-size:1.1rem;margin-bottom:4px}
+.tips{display:grid;gap:10px;font-size:1rem;color:var(--muted)}
+.tips p{margin:0}
+.tips strong{color:var(--ink);font-weight:500}
+.back{max-width:640px;margin:0 auto 12px}.back a{font-family:var(--display);color:var(--gold);text-decoration:none;letter-spacing:.08em;font-size:1rem}.back a:hover,.back a:focus-visible{text-decoration:underline}
+</style>
+</head>
+<body>
+<nav class="back"><a href="index.html">← All recipes</a></nav>
+<div class="card">
+  <header>
+    <h1>Oats Idli</h1>
+    <p class="sub">Soft steamed idlis made from roasted oats and curd, with no grinding of rice or dal and no fermenting</p>
+    <div class="serves">Makes about twelve · Multicooker steam</div>
+  </header>
+
+  <div class="div"><span></span></div>
+
+  <h2>Ingredients</h2>
+  <ul>
+    <li><div class="row"><span class="name">Rolled oats</span><span class="lead"></span><span class="amt">1 cup</span></div></li>
+    <li><div class="row"><span class="name">Plain curd (yoghurt)</span><span class="lead"></span><span class="amt">¾ cup</span></div><span class="note">slightly sour curd tastes best</span></li>
+    <li><div class="row"><span class="name">Water</span><span class="lead"></span><span class="amt">¼–½ cup</span></div><span class="note">add slowly</span></li>
+    <li><div class="row"><span class="name">Oil</span><span class="lead"></span><span class="amt">2 tsp</span></div><span class="note">plus a little for greasing</span></li>
+    <li><div class="row"><span class="name">Mustard seeds</span><span class="lead"></span><span class="amt">½ tsp</span></div></li>
+    <li><div class="row"><span class="name">Urad dal</span><span class="lead"></span><span class="amt">1 tsp</span></div></li>
+    <li><div class="row"><span class="name">Chana dal</span><span class="lead"></span><span class="amt">1 tsp</span></div></li>
+    <li><div class="row"><span class="name">Curry leaves, chopped</span><span class="lead"></span><span class="amt">8</span></div></li>
+    <li><div class="row"><span class="name">Green chilli, finely chopped</span><span class="lead"></span><span class="amt">1</span></div></li>
+    <li><div class="row"><span class="name">Fresh ginger, grated</span><span class="lead"></span><span class="amt">1 cm piece</span></div></li>
+    <li><div class="row"><span class="name">Carrot, finely grated</span><span class="lead"></span><span class="amt">1 small</span></div></li>
+    <li><div class="row"><span class="name">Coriander leaves, chopped</span><span class="lead"></span><span class="amt">2 tbsp</span></div></li>
+    <li><div class="row"><span class="name">Salt</span><span class="lead"></span><span class="amt">½ tsp</span></div></li>
+    <li><div class="row"><span class="name">Baking soda</span><span class="lead"></span><span class="amt">¼ tsp</span></div><span class="note">this makes them fluffy</span></li>
+  </ul>
+
+  <p class="secret"><b>The secret:</b> add the baking soda right before steaming. Once it's in, the batter starts to rise, so don't let it sit.</p>
+
+  <div class="div"><span></span></div>
+
+  <h2>Method</h2>
+  <ol>
+    <li><span class="num">I.</span><div><h3>Roast and grind the oats</h3>
+      <p>Dry-roast the oats in a pan for 3–4 minutes until lightly golden. Let them cool, then grind to a fine powder in your mixer.</p></div></li>
+    <li><span class="num">II.</span><div><h3>Make the tadka</h3>
+      <p>Heat 2 tsp oil. Add mustard seeds. When they pop, add urad dal and chana dal and fry until golden. Add curry leaves, green chilli and ginger, then the grated carrot. Stir 1 minute and turn off.</p></div></li>
+    <li><span class="num">III.</span><div><h3>Make the batter</h3>
+      <p>In a bowl, mix the oat powder, curd, salt, the tadka and coriander. Add water little by little until it's a thick batter, like regular idli batter: it should drop slowly off a spoon.</p></div></li>
+    <li><span class="num">IV.</span><div><h3>Rest</h3>
+      <p>Cover and leave for 10 minutes. The oats soak up liquid and the batter thickens. If it gets too stiff, add a spoon of water.</p></div></li>
+    <li><span class="num">V.</span><div><h3>Get the steamer ready</h3>
+      <p>Pour 2 cups water into the multicooker pot and set it to <strong>Steam</strong> so the water starts heating. Lightly grease your idli plates.</p></div></li>
+    <li><span class="num">VI.</span><div><h3>Add soda and fill</h3>
+      <div class="callout"><em>Only now, add the baking soda.</em>Sprinkle it over the batter with 1 tsp water and mix gently. The batter will turn light and bubbly. Fill the idli moulds about three-quarters full straight away.</div></div></li>
+    <li><span class="num">VII.</span><div><h3>Steam</h3>
+      <p>Place the plates in the cooker, close the lid (valve open, not sealed) and steam for 12–15 minutes. A toothpick pushed in should come out clean.</p></div></li>
+    <li><span class="num">VIII.</span><div><h3>Rest and unmould</h3>
+      <p>Leave them for 3 minutes, then loosen each idli with a wet spoon and lift out.</p></div></li>
+  </ol>
+
+  <div class="div"><span></span></div>
+
+  <h2>Good to know</h2>
+  <div class="tips">
+    <p><strong>Serve with:</strong> sambar, kobbari pachadi or tomato chutney.</p>
+    <p><strong>No idli stand?</strong> Steam the batter in small greased steel bowls in the multicooker's steam basket. Larger bowls need 18–20 minutes.</p>
+    <p><strong>Softer idlis:</strong> add 2 tbsp semolina (rava) to the batter.</p>
+    <p><strong>Time:</strong> about 35 minutes, including resting.</p>
+  </div>
+</div>
+</body>
+</html>
