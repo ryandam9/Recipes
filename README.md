@@ -11,3 +11,4 @@ Simple home-cooked recipes, published as a GitHub Pages site. Open `index.html` 
 - Oats Upma
 - Tomato Pachadi
 - Andhra Prawn Fry
+- Avocado Toast
