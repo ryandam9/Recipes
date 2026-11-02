@@ -13,3 +13,4 @@ Simple home-cooked recipes, published as a GitHub Pages site. Open `index.html` 
 - Andhra Prawn Fry
 - Avocado Toast
 - Andhra Curd Rice
+- Banana Avocado Chia Smoothie
