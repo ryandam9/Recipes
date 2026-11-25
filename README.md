@@ -15,4 +15,4 @@ Simple home-cooked recipes, published as a GitHub Pages site. Open `index.html` 
 - Andhra Curd Rice
 - Banana Avocado Chia Smoothie
 - Banana Choc-Chip Cake
-- Baked Herb Falafel
+- Herb Falafel
