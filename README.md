@@ -16,3 +16,4 @@ Simple home-cooked recipes, published as a GitHub Pages site. Open `index.html` 
 - Banana Avocado Chia Smoothie
 - Banana Choc-Chip Cake
 - Herb Falafel
+- Black Bean Veggie Wrap
